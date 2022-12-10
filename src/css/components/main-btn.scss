@@ -37,5 +37,41 @@
     &:hover {
       background-color: $main-color;
     }
-  };
+  }
+
+  &--blue {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left: 36px;
+    padding-right: 36px;
+    background-color: $main-color;
+    font-size: 16px;
+    line-height: 22px;
+    box-shadow: 0 20px 40px rgba(0, 86, 255, 0.3);
+
+    &:hover {
+      background-color: #004EE6;
+      box-shadow: none;
+    }
+
+    @media (max-width: 767px) {
+      font-size: 15px;
+      padding-left: 16px;
+      padding-right: 16px;
+    }
+  }
+
+  &--mob {
+    display: none;
+
+    @media (max-width: 999px) {
+      display: flex;
+    }
+  }
+
+  &--desktop {
+    @media (max-width: 999px) {
+      display: none;
+    }
+  }
 }

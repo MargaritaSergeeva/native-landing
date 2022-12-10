@@ -1,6 +1,8 @@
 // app global css in SCSS form
 @import 'quasar.variables';
 @import 'fonts';
+@import "swiper/css";
+@import 'swiper/css/effect-fade';
 
 .q-icon > svg,
 .q-icon > img {
@@ -54,3 +56,5 @@ input[type="radio"].visually-hidden {
 @import "components/main-btn";
 @import "components/main-mob-dialog";
 @import "components/main-footer";
+@import "components/main-section";
+@import "components/img-slider";
