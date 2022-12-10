@@ -1,0 +1,14 @@
+.main-mob-dialog {
+  .q-dialog__inner {
+    padding: 0;
+    align-items: flex-start;
+    justify-content: flex-end;
+  }
+
+  .main-mob-dialog__block {
+    max-height: 2000px !important;
+    border-radius: 0;
+    height: 100vh;
+    padding-top: 20px;
+  }
+}

@@ -1,0 +1,41 @@
+.main-btn {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 23px;
+  padding-right: 23px;
+  text-transform: uppercase;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 14px;
+  line-height: 19px;
+  transition: 0.3s all;
+
+  .q-focus-helper {
+    display: none;
+  }
+
+  &::before {
+    display: none;
+  }
+
+  &--simple {
+    padding-right: 0;
+    border: none;
+    font-size: 16px;
+    line-height: 22px;
+    text-transform: none;
+    color: $text-bold-color;
+
+    &:hover {
+      text-shadow:  0 0 1px $text-bold-color;
+    }
+  }
+
+  &--black {
+    background-color: $text-bold-color;
+
+    &:hover {
+      background-color: $main-color;
+    }
+  };
+}
