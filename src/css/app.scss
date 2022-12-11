@@ -55,6 +55,7 @@ input[type="radio"].visually-hidden {
 
 .title {
   margin: 0;
+  margin-bottom: 50px;
   font-size: 56px;
   line-height: 57px;
   font-weight: 400;
@@ -66,20 +67,27 @@ input[type="radio"].visually-hidden {
   }
 
   @media (max-width: 767px) {
+    margin-bottom: 30px;
     font-size: 26px;
     line-height: 120%;
   }
 }
 
 .intro {
+  margin: 0;
   font-size: 22px;
   line-height: 140%;
   text-align: center;
   color: $text-color;
 
   &--white {
-    color: #ffffff;
+    color: #E8F0FF;
   }
+
+  &--bold {
+    font-weight: 600;
+  }
+
 
   @media (max-width: 767px) {
     font-size: 16px;
@@ -97,3 +105,4 @@ input[type="radio"].visually-hidden {
 @import "components/main-page/geo-section";
 @import "components/main-page/geo-slider";
 @import "components/main-page/targeting-section";
+@import "components/main-page/targeting-slider";
