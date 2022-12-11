@@ -94,7 +94,38 @@
         </q-list>
         <q-btn class="targeting-section__main-btn main-btn main-btn--blue">Разместить рекламу</q-btn>
       </div>
-
+    </section>
+    <section class="advantages container">
+      <h2 class="advantages__title title custom-font">Преимущества NativeLab рекламодателям и агентствам</h2>
+      <q-list class="advantages__list">
+        <q-item class="advantages__item">
+          <p><b>Стоимость</b> размещения ниже, чем на других платформах</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Выгодная закупка с помощью <b>кросс-девайс таргетинга</b>, который позволяет поймать одного пользователя на разных устройствах</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p><b>Таргетинг 200+:</b> социально- демографический, контекстуальный, <br>по интересам пользователей,  <br>по ключевым словам</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Более <b>2760</b> собственных сайтов <br><b>+ 8050</b> партнерских</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Контроль <b>качества</b> и viewability рекламы</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Принимаем <b>любые</b> верификаторы и трекеры</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Полная <b>прозрачность</b> <br>в работе</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Креативы в <b>подарок</b>, адаптивные форматы</p>
+        </q-item>
+        <q-item class="advantages__item">
+          <p>Форматы <b>закупки</b> срс, срм, vcpm</p>
+        </q-item>
+      </q-list>
     </section>
   </q-page>
 </template>
@@ -103,5 +134,4 @@
 import ImgSlider from 'components/ImgSlider.vue';
 import GeoSlider from 'components/GeoSlider.vue';
 import TargetingSlider from 'components/TargetingSlider.vue';
-import TargetingSliderMob from 'components/TargetingSliderMob.vue';
 </script>

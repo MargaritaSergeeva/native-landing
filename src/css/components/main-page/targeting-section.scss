@@ -3,7 +3,7 @@
 
   &__container {
     padding-top: 163px;
-    padding-bottom: 150px;
+    padding-bottom: 139px;
     background-image: url('~assets/main/targeting-bg.svg');
     background-repeat: no-repeat;
     background-position: left top;
@@ -140,6 +140,7 @@
   @media (max-width: 767px) {
     &__container {
       padding-top: 86px;
+      padding-bottom: 93px;
       padding-left: 0;
       padding-right: 0;
       background-image: none;
@@ -266,6 +267,13 @@
         font-size: 12px;
         line-height: 145%;
       }
+    }
+
+    &__main-btn {
+      display: flex;
+      margin-right: 15px;
+      margin-left: 15px;
+      width: calc(100% - 30px);
     }
   }
 }
