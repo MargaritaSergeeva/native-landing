@@ -3,6 +3,8 @@
 @import 'fonts';
 @import "swiper/css";
 @import 'swiper/css/effect-fade';
+@import "swiper/css/pagination";
+@import "swiper/css/navigation";
 
 .q-icon > svg,
 .q-icon > img {
@@ -51,10 +53,47 @@ input[type="radio"].visually-hidden {
   }
 }
 
+.title {
+  margin: 0;
+  font-size: 56px;
+  line-height: 57px;
+  font-weight: 400;
+  text-align: center;
+  color: $text-bold-color;
+
+  &--white {
+    color: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+    line-height: 120%;
+  }
+}
+
+.intro {
+  font-size: 22px;
+  line-height: 140%;
+  text-align: center;
+  color: $text-color;
+
+  &--white {
+    color: #ffffff;
+  }
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+    line-height: 140%;
+  }
+}
+
 @import "components/main-header";
 @import "components/essential-link";
 @import "components/main-btn";
 @import "components/main-mob-dialog";
 @import "components/main-footer";
-@import "components/main-section";
-@import "components/img-slider";
+@import "components/main-page/main-section";
+@import "components/main-page/img-slider";
+@import "components/main-page/geo-section";
+@import "components/main-page/geo-slider";
+@import "components/main-page/targeting-section";

@@ -13,14 +13,21 @@
         <q-btn class="main-btn main-btn--blue main-btn--mob">получить презентацию и кейсы</q-btn>
       </div>
     </section>
-    <section class="geo container">
-      <h2>Широкий охват ГЕО</h2>
-      <p>Мы предлагаем рекламодателям качественный нативный трафик из более чем 22 стран мира</p>
-
+    <section class="geo-section container">
+      <h2 class="geo-section__title title custom-font">Широкий охват ГЕО</h2>
+      <p class="geo-section__intro intro">Мы предлагаем рекламодателям качественный нативный трафик из более чем 22 стран мира</p>
+      <div class="geo-section__slider-block">
+        <GeoSlider/>
+      </div>
+    </section>
+    <section class="targeting-section">
+      <h2 class="targeting-section__title title title--white custom-font">Форматы и таргетинги</h2>
+      <p class="targeting-section__intro intro intro--white">TGB • TGB In-Read • Баннер</p>
     </section>
   </q-page>
 </template>
 
 <script setup lang="ts">
-import ImgSlider from 'components/ImgSlider.vue'
+import ImgSlider from 'components/ImgSlider.vue';
+import GeoSlider from 'components/GeoSlider.vue';
 </script>

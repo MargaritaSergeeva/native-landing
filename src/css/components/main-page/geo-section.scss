@@ -1,0 +1,30 @@
+.geo-section {
+  padding-top: 50px;
+  padding-bottom: 180px;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__intro {
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 100px;
+    max-width: 900px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 92px;
+    padding-bottom: 92px;
+    &__title {
+      margin-bottom: 25px;
+    }
+
+    &__intro {
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 57px;
+      max-width: 900px;
+    }
+  }
+}
