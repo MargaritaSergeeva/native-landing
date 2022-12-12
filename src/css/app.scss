@@ -15,6 +15,7 @@
 body {
   font-family: "OpenSans", "Arial", sans-serif;
   background-color: $bg-color;
+  color: $text-color;
 }
 
 .custom-font {
@@ -106,4 +107,6 @@ input[type="radio"].visually-hidden {
 @import "components/main-page/geo-slider";
 @import "components/main-page/targeting-section";
 @import "components/main-page/targeting-slider";
-@import "components/main-page/advantages";
+@import "components/main-page/advantages-section";
+@import "components/main-page/faq-section";
+@import "components/main-page/features-section";

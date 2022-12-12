@@ -1,4 +1,4 @@
-.advantages {
+.advantages-section {
   padding-top: 165px;
   &__title {
     max-width: 900px;
@@ -132,6 +132,7 @@
 
   @media(max-width: 767px) {
     padding-top: 85px;
+    padding-bottom: 20px;
     &__title {
       margin-bottom: 50px;
     }
