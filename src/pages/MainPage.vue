@@ -327,6 +327,10 @@
         <q-btn class="control-section__main-btn main-btn main-btn--blue">Разместить рекламу</q-btn>
       </div>
     </section>
+    <section class="partners-section container">
+      <h2 class="partners-section__title title custom-font">Наши партнеры</h2>
+      <PartnersSlider/>
+    </section>
   </q-page>
 </template>
 
@@ -334,4 +338,5 @@
 import ImgSlider from 'components/ImgSlider.vue';
 import GeoSlider from 'components/GeoSlider.vue';
 import TargetingSlider from 'components/TargetingSlider.vue';
+import PartnersSlider from 'components/PartnersSlider.vue';
 </script>

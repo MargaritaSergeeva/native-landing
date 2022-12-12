@@ -1,0 +1,19 @@
+.partners-section {
+  padding-top: 163px;
+  padding-bottom: 123px;
+  padding-left: 0;
+  padding-right: 0;
+
+  &__title {
+    margin-bottom: 80px;
+  }
+
+  @media (max-width: 767px) {
+    padding-top: 85px;
+    padding-bottom: 58px;
+
+    &__title {
+      margin-bottom: 69px;
+    }
+  }
+}
