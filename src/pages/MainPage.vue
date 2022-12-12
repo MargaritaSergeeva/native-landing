@@ -14,20 +14,20 @@
       </div>
     </section>
     <section class="geo-section container">
-      <h2 class="geo-section__title title custom-font">Широкий охват ГЕО</h2>
-      <p class="geo-section__intro intro">Мы предлагаем рекламодателям качественный нативный трафик из более чем 22 стран мира</p>
-      <div class="geo-section__slider-block">
+      <h2 class="geo-section__title title custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Широкий охват ГЕО</h2>
+      <p class="geo-section__intro intro" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Мы предлагаем рекламодателям качественный нативный трафик из более чем 22 стран мира</p>
+      <div class="geo-section__slider-block" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
         <GeoSlider/>
       </div>
     </section>
     <section class="targeting-section">
       <div class="targeting-section__container container">
-        <h2 class="targeting-section__title title title--white custom-font">Форматы и таргетинги</h2>
-        <p class="targeting-section__intro intro intro--white">TGB • TGB In-Read • Баннер</p>
-        <div class="targeting-section__desktop">
+        <h2 class="targeting-section__title title title--white custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Форматы и таргетинги</h2>
+        <p class="targeting-section__intro intro intro--white" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">TGB • TGB In-Read • Баннер</p>
+        <div class="targeting-section__desktop" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
             <TargetingSlider/>
         </div>
-        <div class="targeting-section__mob">
+        <div class="targeting-section__mob" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <q-list class="targeting-section__mob-list">
             <q-item class="targeting-section__mob-item">
               <picture>
@@ -55,15 +55,15 @@
             </q-item>
           </q-list>
         </div>
-        <p class="targeting-section__intro intro intro--white intro--bold">Доступные настройки таргетов</p>
-        <q-list class="targeting-section__target-list">
+        <p class="targeting-section__intro intro intro--white intro--bold" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Доступные настройки таргетов</p>
+        <q-list class="targeting-section__target-list" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <q-item class="targeting-section__target-item"><p>География</p></q-item>
           <q-item class="targeting-section__target-item"><p>Устройства <br>(ПК/моб)</p></q-item>
           <q-item class="targeting-section__target-item"><p>Операционные системы</p></q-item>
           <q-item class="targeting-section__target-item"><p>Операторы связи</p></q-item>
           <q-item class="targeting-section__target-item"><p>Браузеры</p></q-item>
         </q-list>
-        <q-list class="targeting-section__target-list-big">
+        <q-list class="targeting-section__target-list-big" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <q-item class="targeting-section__target-item-big">
             <p>Интеграция с DMP- платформами</p>
             <ul>
@@ -92,43 +92,43 @@
             </span>
           </q-item>
         </q-list>
-        <q-btn class="targeting-section__main-btn main-btn main-btn--blue">Разместить рекламу</q-btn>
+        <q-btn class="targeting-section__main-btn main-btn main-btn--blue" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Разместить рекламу</q-btn>
       </div>
     </section>
     <section class="advantages-section container">
-      <h2 class="advantages-section__title title custom-font">Преимущества NativeLab рекламодателям и агентствам</h2>
+      <h2 class="advantages-section__title title custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Преимущества NativeLab рекламодателям и агентствам</h2>
       <q-list class="advantages-section__list">
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p><b>Стоимость</b> размещения ниже, чем на других платформах</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Выгодная закупка с помощью <b>кросс-девайс таргетинга</b>, который позволяет поймать одного пользователя на разных устройствах</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p><b>Таргетинг 200+:</b> социально- демографический, контекстуальный, <br>по интересам пользователей,  <br>по ключевым словам</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Более <b>2760</b> собственных сайтов <br><b>+ 8050</b> партнерских</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Контроль <b>качества</b> и viewability рекламы</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Принимаем <b>любые</b> верификаторы и трекеры</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Полная <b>прозрачность</b> <br>в работе</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Креативы в <b>подарок</b>, адаптивные форматы</p>
         </q-item>
-        <q-item class="advantages-section__item">
+        <q-item class="advantages-section__item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <p>Форматы <b>закупки</b> срс, срм, vcpm</p>
         </q-item>
       </q-list>
     </section>
     <section class="faq-section container">
-      <h2 class="faq-section__title title custom-font">FAQ</h2>
+      <h2 class="faq-section__title title custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">FAQ</h2>
       <q-list class="faq-section__list">
         <q-expansion-item
           expand-separator
@@ -136,6 +136,7 @@
           class="faq-section__accordion"
           expand-icon="add"
           expanded-icon="remove"
+          data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
         >
           <q-card>
             <q-card-section>
@@ -149,6 +150,7 @@
           class="faq-section__accordion"
           expand-icon="add"
           expanded-icon="remove"
+          data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
         >
           <q-card>
             <q-card-section>
@@ -196,6 +198,7 @@
           class="faq-section__accordion"
           expand-icon="add"
           expanded-icon="remove"
+          data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
         >
           <q-card>
             <q-card-section>
@@ -221,6 +224,7 @@
           class="faq-section__accordion"
           expand-icon="add"
           expanded-icon="remove"
+          data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000"
         >
           <q-card>
             <q-card-section>
@@ -229,13 +233,13 @@
           </q-card>
         </q-expansion-item>
       </q-list>
-      <q-btn class="faq-section__main-btn main-btn main-btn--blue">Разместить рекламу</q-btn>
+      <q-btn class="faq-section__main-btn main-btn main-btn--blue" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Разместить рекламу</q-btn>
     </section>
     <section class="features-section">
       <div class="features-section__container container">
-        <h2 class="features-section__title title custom-font">Собственный RTB движок и технологии</h2>
-        <p class="features-section__intro intro intro--bold">Особенности DMP</p>
-        <q-list class="features-section__list">
+        <h2 class="features-section__title title custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Собственный RTB движок и технологии</h2>
+        <p class="features-section__intro intro intro--bold" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Особенности DMP</p>
+        <q-list class="features-section__list" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
           <q-item class="features-section__item">
             <p>
               Собственный <b>сквозной идентификатор</b>, позволяющий платить за уникальный охват до 3х раз меньше
@@ -287,10 +291,10 @@
     </section>
     <section class="control-section">
       <div class="control-section__container container">
-        <h2 class="control-section__title title title--white custom-font">Контроль за размещением рекламы</h2>
-        <p class="control-section__intro intro intro--bold intro--white">Brand safety</p>
+        <h2 class="control-section__title title title--white custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Контроль за размещением рекламы</h2>
+        <p class="control-section__intro intro intro--bold intro--white" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Brand safety</p>
         <div class="control-section__block">
-          <div class="control-section__block-item">
+          <div class="control-section__block-item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
             <h3>Защита бренда от фрода и ненужного контента</h3>
             <q-list class="control-section__block-list">
               <q-item class="control-section__block-list-item">
@@ -310,7 +314,7 @@
               </q-item>
             </q-list>
           </div>
-          <div class="control-section__block-item">
+          <div class="control-section__block-item" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
             <h3>Высокое качество нашего трафика подтверждено</h3>
             <div class="control-section__block-sign">
               <p>Антифрод А</p>
@@ -324,26 +328,36 @@
             <p>Применение верификаторов третьих сторон Weborama, AdRiver, Sizmek или других</p>
           </div>
         </div>
-        <q-btn class="control-section__main-btn main-btn main-btn--blue">Разместить рекламу</q-btn>
+        <q-btn class="control-section__main-btn main-btn main-btn--blue" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Разместить рекламу</q-btn>
       </div>
     </section>
     <section class="partners-section container">
-      <h2 class="partners-section__title title custom-font">Наши партнеры</h2>
-      <PartnersSlider/>
+      <h2 class="partners-section__title title custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Наши партнеры</h2>
+      <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
+        <PartnersSlider/>
+      </div>
     </section>
     <section class="contacts-section">
       <div class="contacts-section__container container">
-        <h2 class="contacts-section__title title custom-font">Контакты</h2>
-        <ContactsSlider/>
+        <h2 class="contacts-section__title title custom-font" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">Контакты</h2>
+        <div data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000">
+          <ContactsSlider/>
+        </div>
       </div>
     </section>
   </q-page>
 </template>
 
-<script setup lang="ts">
+<script setup>
+import { onMounted } from 'vue';
 import ImgSlider from 'components/ImgSlider.vue';
 import GeoSlider from 'components/GeoSlider.vue';
 import TargetingSlider from 'components/TargetingSlider.vue';
 import PartnersSlider from 'components/PartnersSlider.vue';
 import ContactsSlider from 'components/ContactsSlider.vue';
+import AOS from 'aos';
+
+onMounted(() => {
+  AOS.init();
+})
 </script>
