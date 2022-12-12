@@ -1,0 +1,129 @@
+.contacts-slider {
+  position: relative;
+
+  &__slider {
+    width: 90%;
+  }
+
+  &__card {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  &__name {
+    margin: 0;
+    margin-bottom: 16px;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 140%;
+    text-align: center;
+  }
+
+  &__job {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    max-width: 300px;
+    min-height: 50px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 18px;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 140%;
+    text-align: center;
+  }
+
+  &__links {
+    a {
+      display: block;
+      width: 100%;
+      margin-bottom: 9px;
+      text-align: center;
+      font-size: 14px;
+      line-height: 140%;
+      color: $text-color;
+      text-decoration: none;
+    }
+  }
+
+  &__prev {
+    position: absolute;
+    z-index: 10;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 22px;
+    height: 34px;
+    background-image: url('~assets/main/prev.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  &__next {
+    position: absolute;
+    z-index: 1000;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    width: 22px;
+    height: 34px;
+    background-image: url('~assets/main/next.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+    cursor: pointer;
+  }
+
+  .swiper-button-lock {
+    display: block;
+    opacity: 0.3;
+  }
+
+  @media(max-width: 767px) {
+    &__name {
+      margin-bottom: 16px;
+      font-size: 16px;
+      line-height: 140%;
+    }
+
+    &__job {
+      margin: 0;
+      max-width: 300px;
+      min-height: 50px;
+      margin-right: auto;
+      margin-left: auto;
+      margin-bottom: 18px;
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 140%;
+      text-align: center;
+    }
+
+    &__links {
+      a {
+        display: block;
+        width: 100%;
+        margin-bottom: 9px;
+        text-align: center;
+        font-size: 14px;
+        line-height: 140%;
+        color: $text-color;
+        text-decoration: none;
+      }
+    }
+
+    &__prev {
+      width: 13px;
+      height: 19px;
+      background-size: contain;
+    }
+
+    &__next {
+      width: 13px;
+      height: 19px;
+      background-size: contain;
+    }
+  }
+}

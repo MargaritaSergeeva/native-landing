@@ -331,6 +331,12 @@
       <h2 class="partners-section__title title custom-font">Наши партнеры</h2>
       <PartnersSlider/>
     </section>
+    <section class="contacts-section">
+      <div class="contacts-section__container container">
+        <h2 class="contacts-section__title title custom-font">Контакты</h2>
+        <ContactsSlider/>
+      </div>
+    </section>
   </q-page>
 </template>
 
@@ -339,4 +345,5 @@ import ImgSlider from 'components/ImgSlider.vue';
 import GeoSlider from 'components/GeoSlider.vue';
 import TargetingSlider from 'components/TargetingSlider.vue';
 import PartnersSlider from 'components/PartnersSlider.vue';
+import ContactsSlider from 'components/ContactsSlider.vue';
 </script>

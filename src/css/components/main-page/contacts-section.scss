@@ -1,0 +1,28 @@
+.contacts-section {
+  border-top: 1px solid $white-color;
+
+  &__container {
+    padding-top: 165px;
+    padding-bottom: 165px;
+    background-image: url('~assets/main/prefooter.svg');
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &__title {
+    margin-bottom: 84px;
+  }
+
+  @media(max-width: 767px) {
+    &__container {
+      padding-top: 85px;
+      padding-bottom: 81px;
+      background-size: 600px;
+      background-position: center top -5px;
+    }
+
+    &__title {
+      margin-bottom: 74px;
+    }
+  }
+}
