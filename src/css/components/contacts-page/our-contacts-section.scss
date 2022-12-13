@@ -1,0 +1,129 @@
+.our-contacts-section {
+  max-width: 1210px;
+  padding-top: 55px;
+  padding-bottom: 33px;
+  padding-right: 70px;
+
+  &__item {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #ffffff;
+    padding-bottom: 50px;
+    padding-left: 127px;
+    padding-right: 127px;
+    margin-bottom: 42px;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__img {
+    width: 146px;
+  }
+
+  &__name-block {
+    font-size: 18px;
+    line-height: 140%;
+    width: 42%;
+
+    p {
+      margin: 0;
+    }
+
+    .our-contacts-section__name {
+      margin-bottom: 30px;
+      font-size: 22px;
+      line-height: 140%;
+    }
+  }
+
+
+
+  &__contact-block {
+    width: 30%;
+    a {
+      display: flex;
+      margin-bottom: 15px;
+      font-size: 18px;
+      line-height: 140%;
+      text-decoration: none;
+      color: $text-color;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  @media(max-width: 1200px) {
+    &__item {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  @media(max-width: 999px) {
+    &__item {
+      padding-left: 0;
+      padding-right: 0;
+    }
+
+    &__name-block {
+      width: 37%;
+    }
+
+    &__contact-block {
+      width: 37%;
+    }
+  }
+
+  @media(max-width: 767px) {
+    padding-top: 20px;
+    padding-bottom: 6px;
+    padding-right: 15px;
+
+    &__item {
+      flex-direction: column;
+      justify-content: center;
+      padding-bottom: 46px;
+      margin-bottom: 39px;
+    }
+
+    &__img {
+      width: 90px;
+      margin-bottom: 15px;
+    }
+
+    &__name-block {
+      width: 100%;
+      font-size: 18px;
+      line-height: 140%;
+      margin-bottom: 21px;
+
+      p {
+        margin: 0;
+        font-size: 14px;
+        line-height: 140%;
+        text-align: center;
+      }
+
+      .our-contacts-section__name {
+        margin-bottom: 7px;
+        font-size: 16px;
+        line-height: 140%;
+      }
+    }
+
+    &__contact-block {
+      width: 100%;
+
+      a {
+        font-size: 14px;
+        line-height: 140%;
+        justify-content: center;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

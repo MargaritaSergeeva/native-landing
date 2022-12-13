@@ -55,6 +55,20 @@ input[type="radio"].visually-hidden {
   }
 }
 
+.main-title {
+  margin: 0;
+  font-weight: 400;
+  font-size: 66px;
+  line-height: 67px;
+  letter-spacing: 0;
+
+  @media(max-width: 767px) {
+    font-size: 42px;
+    line-height: 42px;
+    text-align: center;
+  }
+}
+
 .title {
   margin: 0;
   margin-bottom: 50px;
@@ -97,6 +111,42 @@ input[type="radio"].visually-hidden {
   }
 }
 
+.input {
+  background-color: $white-color;
+  border-radius: 0;
+  outline: none;
+  padding-left: 20px;
+  padding-right: 20px;
+
+  &--textarea {
+    textarea {
+      resize: none !important;
+    }
+
+    .q-field__control {
+      min-height: 92px !important;
+    }
+  }
+
+  .q-field__control {
+    height: 36px;
+  }
+}
+
+.label {
+  display: block;
+  margin-bottom: 4px;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 140%;
+
+  @media(max-width: 767px) {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
 @import "components/main-header";
 @import "components/essential-link";
 @import "components/main-btn";
@@ -116,3 +166,8 @@ input[type="radio"].visually-hidden {
 @import "components/main-page/partners-slider";
 @import "components/main-page/contacts-section";
 @import "components/main-page/contacts-slider";
+@import "components/contacts-page/contacts-page";
+@import "components/contacts-page/main-contacts-section";
+@import "components/contacts-page/contacts-form";
+@import "components/contacts-page/map-block";
+@import "components/contacts-page/our-contacts-section";

@@ -6,7 +6,7 @@
     padding-bottom: 165px;
     background-image: url('~assets/main/prefooter.svg');
     background-repeat: no-repeat;
-    background-size: contain;
+    background-position: calc(50% + 22px) 68px;
   }
 
   &__title {
@@ -17,8 +17,8 @@
     &__container {
       padding-top: 85px;
       padding-bottom: 81px;
-      background-size: 600px;
-      background-position: center top -5px;
+      background-size: 150px;
+      background-position: calc(50% + 12px) 20px;
     }
 
     &__title {

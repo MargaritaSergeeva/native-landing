@@ -47,6 +47,12 @@
 <script setup lang="ts">
 import { Pagination }  from 'swiper';
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import AOS from 'aos';
+import {onMounted} from 'vue';
+
+onMounted(() => {
+  AOS.init();
+})
 
 const partnersData = [
   {
@@ -131,11 +137,4 @@ const partnersData = [
     img: 'utro',
   },
 ];
-
-const pagination = {
-  clickable: true,
-  renderBullet: function (index: number, className: string) {
-    return '<span class="' + className + '">' + (index + 1) + "</span>";
-  },
-};
 </script>

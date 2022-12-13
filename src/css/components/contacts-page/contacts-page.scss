@@ -1,0 +1,10 @@
+.contacts-page {
+  background-image: url('~assets/contacts/contacts-bg.svg');
+  background-repeat: no-repeat;
+  background-position: calc(50% + 45px) calc(50% + 230px);
+  background-size: 1520px;
+
+  @media(max-width: 999px) {
+    background-image: none;
+  }
+}

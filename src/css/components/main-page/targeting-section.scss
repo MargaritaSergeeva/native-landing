@@ -1,13 +1,12 @@
 .targeting-section {
   background-color: $text-bold-color;
+  background-image: url('~assets/main/targeting-bg.svg');
+  background-repeat: no-repeat;
+  background-position: calc(50% - 86px) 220px;
 
   &__container {
     padding-top: 163px;
     padding-bottom: 139px;
-    background-image: url('~assets/main/targeting-bg.svg');
-    background-repeat: no-repeat;
-    background-position: left top;
-    background-size: cover;
   }
 
   &__intro {
@@ -138,12 +137,12 @@
   }
 
   @media (max-width: 767px) {
+    background-image: none;
     &__container {
       padding-top: 86px;
       padding-bottom: 93px;
       padding-left: 0;
       padding-right: 0;
-      background-image: none;
     }
 
     &__intro {
