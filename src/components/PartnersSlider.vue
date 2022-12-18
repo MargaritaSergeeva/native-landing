@@ -41,12 +41,11 @@
   </div>
 
 
-
 </template>
 
 <script setup lang="ts">
-import { Pagination }  from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import {Pagination} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/vue';
 import AOS from 'aos';
 import {onMounted} from 'vue';
 
@@ -98,13 +97,13 @@ const partnersData = [
   {
     id: 11,
     img: 'cosmo',
-  },  {
+  }, {
     id: 12,
     img: 'rbk',
-  },  {
+  }, {
     id: 13,
     img: 'rambler',
-  },  {
+  }, {
     id: 14,
     img: 'tass',
   },

@@ -4,7 +4,7 @@
       class="contacts-slider__slider"
       :modules="[Navigation]"
       :speed="500"
-      :navigation= "{
+      :navigation="{
         nextEl: '.contacts-slider__next',
         prevEl: '.contacts-slider__prev'
       }"
@@ -25,12 +25,12 @@
     >
       <swiper-slide v-for="contact in contactsData" :key="contact.name" class="contacts-slider__slide">
         <q-card class="contacts-slider__card">
-          <p class="contacts-slider__name">{{contact.name}}</p>
-          <p class="contacts-slider__job">{{contact.job}}</p>
+          <p class="contacts-slider__name">{{ contact.name }}</p>
+          <p class="contacts-slider__job">{{ contact.job }}</p>
           <div class="contacts-slider__links">
-            <a :href="'mailto:'+ contact.email">Email: {{contact.email}}</a>
-            <a :href="'https://t.me/'+ contact.telegram">Телеграм: @{{contact.telegram}}</a>
-            <a :href="'tel:'+ contact.tel2">Телефон: {{contact.tel}}</a>
+            <a :href="'mailto:'+ contact.email">Email: {{ contact.email }}</a>
+            <a :href="'https://t.me/'+ contact.telegram">Телеграм: @{{ contact.telegram }}</a>
+            <a :href="'tel:'+ contact.tel2">Телефон: {{ contact.tel }}</a>
           </div>
         </q-card>
       </swiper-slide>
@@ -40,12 +40,11 @@
   </div>
 
 
-
 </template>
 
 <script setup lang="ts">
-import { Navigation }  from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import {Navigation} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/vue';
 
 const contactsData = [
   {

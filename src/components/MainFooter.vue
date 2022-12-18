@@ -33,7 +33,8 @@
       </div>
       <div class="main-footer__block">
         <div class="main-footer__block-inner">
-          <p class="main-footer__max-margin"><span>Юридический адрес:</span> 350049, г. Краснодар, ул. Красных Партизан, д. 367, пом. 613</p>
+          <p class="main-footer__max-margin"><span>Юридический адрес:</span> 350049, г. Краснодар, ул. Красных Партизан,
+            д. 367, пом. 613</p>
         </div>
         <div class="main-footer__block-inner">
           <p><span>Фактический адрес:</span> 350049, г. Краснодар, ул. Красных Партизан, д. 367, пом. 613</p>

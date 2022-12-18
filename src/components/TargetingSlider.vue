@@ -11,22 +11,27 @@
     >
       <swiper-slide class="targeting-slider__slide">
         <picture>
-          <img class="targeting-slider__img" src="~assets/main/begining-article.png" srcset="~assets/main/begining-article.png 1x, ~assets/main/begining-article-2x.png 2x" alt="begining article">
+          <img class="targeting-slider__img" src="~assets/main/begining-article.png"
+               srcset="~assets/main/begining-article.png 1x, ~assets/main/begining-article-2x.png 2x"
+               alt="begining article">
         </picture>
       </swiper-slide>
       <swiper-slide class="targeting-slider__slide">
         <picture>
-          <img class="targeting-slider__img" src="~assets/main/ending-article.png" srcset="~assets/main/ending-article.png 1x, ~assets/main/ending-article-2x.png 2x" alt="ending article">
+          <img class="targeting-slider__img" src="~assets/main/ending-article.png"
+               srcset="~assets/main/ending-article.png 1x, ~assets/main/ending-article-2x.png 2x" alt="ending article">
         </picture>
       </swiper-slide>
       <swiper-slide class="targeting-slider__slide">
         <picture>
-          <img class="targeting-slider__img" src="~assets/main/middle-article.png" srcset="~assets/main/middle-article.png 1x, ~assets/main/middle-article-2x.png 2x" alt="middle article">
+          <img class="targeting-slider__img" src="~assets/main/middle-article.png"
+               srcset="~assets/main/middle-article.png 1x, ~assets/main/middle-article-2x.png 2x" alt="middle article">
         </picture>
       </swiper-slide>
       <swiper-slide class="targeting-slider__slide">
         <picture>
-          <img class="targeting-slider__img" src="~assets/main/side-article.png" srcset="~assets/main/side-article.png 1x, ~assets/main/side-article-2x.png 2x" alt="side article">
+          <img class="targeting-slider__img" src="~assets/main/side-article.png"
+               srcset="~assets/main/side-article.png 1x, ~assets/main/side-article-2x.png 2x" alt="side article">
         </picture>
       </swiper-slide>
     </swiper>
@@ -41,9 +46,9 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-import { EffectFade } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import {ref} from 'vue';
+import {EffectFade} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/vue';
 
 let swiperRef = null;
 const slideNumber = ref(1);

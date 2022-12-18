@@ -4,7 +4,7 @@
       class="geo-slider__slider"
       :modules="[Navigation]"
       :speed="500"
-      :navigation= "{
+      :navigation="{
         nextEl: '.geo-slider__next',
         prevEl: '.geo-slider__prev'
       }"
@@ -30,10 +30,10 @@
     >
       <swiper-slide v-for="geo in geoData" :key="geo.title" class="geo-slider__slide">
         <q-card class="geo-slider__card">
-          <h3 class="geo-slider__title">{{geo.title}} <span class="geo-slider__alias">{{geo.alias}}</span></h3>
+          <h3 class="geo-slider__title">{{ geo.title }} <span class="geo-slider__alias">{{ geo.alias }}</span></h3>
           <div>
-            <p class="geo-slider__click"><b>{{geo.show_per_day}}</b> <span>показов /день</span></p>
-            <p class="geo-slider__click"><b>{{geo.click_per_day}}</b> <span>кликов /день</span></p>
+            <p class="geo-slider__click"><b>{{ geo.show_per_day }}</b> <span>показов /день</span></p>
+            <p class="geo-slider__click"><b>{{ geo.click_per_day }}</b> <span>кликов /день</span></p>
           </div>
           <div v-if="geo.flag" class="geo-slider__flag">
             <img :src="geo.flag" alt="flag">
@@ -46,12 +46,11 @@
   </div>
 
 
-
 </template>
 
 <script setup lang="ts">
-import { Navigation }  from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/vue';
+import {Navigation} from 'swiper';
+import {Swiper, SwiperSlide} from 'swiper/vue';
 
 const geoData = [
   {

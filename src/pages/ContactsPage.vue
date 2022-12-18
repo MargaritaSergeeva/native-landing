@@ -14,53 +14,56 @@
       <div class="main-contacts-section__item main-contacts-section__item--big">
         <h2>Остались вопросы? Мы поможем.</h2>
         <p>Чтобы получить презентацию, кейсы или у Вас есть вопросы, заполните форму:</p>
-        <q-form class="main-contacts-section__form contacts-form">
+        <q-form class="main-contacts-section__form contacts-form" @submit="submit">
           <div class="contacts-form__group">
             <label for="name" class="contacts-form__label label">Имя и фамилия</label>
             <q-input
+              ref="nameInputRef"
               v-model="contactsFormData.name"
               id="name"
               class="contacts-form__input input"
               square
               borderless
-              required
+              :rules="[rules.required, rules.minLen(3), rules.maxLen(50)]"
             ></q-input>
           </div>
           <div class="contacts-form__group-wrapper">
             <div class="contacts-form__group contacts-form__group--big">
               <label for="email" class="contacts-form__label label">Email</label>
               <q-input
+                ref="emailInputRef"
                 v-model="contactsFormData.email"
                 id="email"
                 class="contacts-form__input input"
                 square
                 borderless
-                type="email"
-                required
+                :rules="[rules.required, rules.email]"
               ></q-input>
             </div>
             <div class="contacts-form__group">
               <label for="phone" class="contacts-form__label label">Телефон</label>
               <q-input
+                ref="phoneInputRef"
                 v-model="contactsFormData.phone"
                 id="phone"
                 class="contacts-form__input input"
                 square
                 borderless
-                mask="(###) ### - ####"
-                required
+                type="number"
+                :rules="[rules.required]"
               ></q-input>
             </div>
           </div>
           <div class="contacts-form__group">
             <label for="company" class="contacts-form__label label">Название компании</label>
             <q-input
+              ref="nameCompanyInputRef"
               v-model="contactsFormData.company"
               id="company"
               class="contacts-form__input input"
               square
               borderless
-              required
+              :rules="[rules.required, rules.minLen(3), rules.maxLen(50)]"
             ></q-input>
           </div>
           <div class="contacts-form__group">
@@ -101,7 +104,7 @@
 </template>
 
 <script setup lang="ts">
-import {ref} from 'vue';
+import {computed, ref} from 'vue';
 
 interface contactsFormData {
   name: string,
@@ -139,4 +142,44 @@ const contactsData = [
     photo: 'photo2',
   },
 ];
+
+const nameInputRef = ref();
+const emailInputRef = ref();
+const phoneInputRef = ref();
+const nameCompanyInputRef = ref();
+
+const submit = () => {
+  if (!checkValidate.value) {
+    return;
+  }
+};
+
+const checkValidate = computed(() => {
+  const formInputs = [
+    nameInputRef.value,
+    emailInputRef.value,
+    phoneInputRef.value,
+    nameCompanyInputRef.value,
+  ];
+
+  return formInputs.reduce((isValid = true, input) => {
+    const isValidInput = input.validate();
+    if (!isValidInput) isValid = isValidInput;
+    return isValid;
+  }, []);
+});
+
+const rules = {
+  required: (v: boolean | undefined) => !!v || 'Поле обязательно для заполнения',
+  minLen: (minLen: number) => (v: string) => {
+    return v.length >= minLen || `Минимум ${minLen} символов`;
+  },
+  maxLen: (maxLen: number) => (v: string) => {
+    return v.length <= maxLen || `Максимум ${maxLen} символов`;
+  },
+  email: (v: string) => {
+    const emailPattern = /.+@.+\..+$/;
+    return emailPattern.test(v) || 'Неверный формат email';
+  },
+};
 </script>

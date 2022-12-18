@@ -29,7 +29,8 @@
     </swiper-slide>
     <swiper-slide class="img-slider__slide">
       <picture>
-        <img class="img-slider__img img-slider__img--laptop" src="~assets/main/laptop2.png" srcset="~assets/main/laptop2.png 1x, ~assets/main/laptop2-2x.png 2x" alt="laptop">
+        <img class="img-slider__img img-slider__img--laptop" src="~assets/main/laptop2.png"
+             srcset="~assets/main/laptop2.png 1x, ~assets/main/laptop2-2x.png 2x" alt="laptop">
       </picture>
     </swiper-slide>
   </swiper>

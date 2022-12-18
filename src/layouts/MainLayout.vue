@@ -2,7 +2,7 @@
   <q-layout class="main-layout" view="lHh Lpr lFf">
     <MainHeader/>
     <q-page-container style="flex: 1 0 auto;">
-      <router-view />
+      <router-view/>
     </q-page-container>
     <MainFooter/>
   </q-layout>

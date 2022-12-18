@@ -5,12 +5,12 @@
         <div class="main-section__text-block">
           <h1><span class="custom-font main-section__title main-title">NativеLab –</span> платформа нативной рекламы.</h1>
           <p class="main-section__text">Более <b>6 лет</b> опыта на международном рекламном рынке!</p>
-          <q-btn class="main-btn main-btn--blue main-btn--desktop">получить презентацию и кейсы</q-btn>
+          <q-btn class="main-btn main-btn--blue main-btn--desktop" @click="router.push({name: 'contacts'})">получить презентацию и кейсы</q-btn>
         </div>
         <div class="main-section__img-block">
           <ImgSlider/>
         </div>
-        <q-btn class="main-btn main-btn--blue main-btn--mob">получить презентацию и кейсы</q-btn>
+        <q-btn class="main-btn main-btn--blue main-btn--mob" @click="router.push({name: 'contacts'})">получить презентацию и кейсы</q-btn>
       </div>
     </section>
     <section class="geo-section container">
@@ -92,7 +92,16 @@
             </span>
           </q-item>
         </q-list>
-        <q-btn class="targeting-section__main-btn main-btn main-btn--blue main-btn--wide" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-once="true">Разместить рекламу</q-btn>
+        <q-btn
+          class="targeting-section__main-btn main-btn main-btn--blue main-btn--wide"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          @click="router.push({name: 'registration'})"
+        >
+          Разместить рекламу
+        </q-btn>
       </div>
     </section>
     <section class="advantages-section container">
@@ -233,7 +242,14 @@
           </q-card>
         </q-expansion-item>
       </q-list>
-      <q-btn class="faq-section__main-btn main-btn main-btn--blue main-btn--wide" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-once="true">Разместить рекламу</q-btn>
+      <q-btn
+        class="faq-section__main-btn main-btn main-btn--blue main-btn--wide"
+        data-aos="fade-up" data-aos-anchor-placement="top-center"
+        data-aos-duration="1000"
+        data-aos-once="true"
+        @click="router.push({name: 'registration'})">
+          Разместить рекламу
+      </q-btn>
     </section>
     <section class="features-section">
       <div class="features-section__container container">
@@ -328,7 +344,16 @@
             <p data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-once="true">Применение верификаторов третьих сторон Weborama, AdRiver, Sizmek или других</p>
           </div>
         </div>
-        <q-btn class="control-section__main-btn main-btn main-btn--blue main-btn--wide" data-aos="fade-up" data-aos-anchor-placement="top-center" data-aos-duration="1000" data-aos-once="true">Разместить рекламу</q-btn>
+        <q-btn
+          class="control-section__main-btn main-btn main-btn--blue main-btn--wide"
+          data-aos="fade-up"
+          data-aos-anchor-placement="top-center"
+          data-aos-duration="1000"
+          data-aos-once="true"
+          @click="router.push({name: 'registration'})"
+        >
+          Разместить рекламу
+        </q-btn>
       </div>
     </section>
     <section class="partners-section container">
@@ -356,6 +381,9 @@ import TargetingSlider from 'components/TargetingSlider.vue';
 import PartnersSlider from 'components/PartnersSlider.vue';
 import ContactsSlider from 'components/ContactsSlider.vue';
 const AOS = require('aos');
+import {useRouter} from 'vue-router';
+
+const router = useRouter();
 
 onMounted(() => {
   AOS.init();

@@ -6,7 +6,7 @@
       </router-link>
     </div>
     <q-page-container style="flex: 1 0 auto;">
-      <router-view />
+      <router-view/>
     </q-page-container>
     <MainFooter/>
   </q-layout>

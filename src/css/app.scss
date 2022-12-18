@@ -151,17 +151,27 @@ input[type="radio"].visually-hidden {
 
   &--textarea {
     textarea {
+      padding-left: 20px;
+      padding-right: 20px;
       resize: none !important;
     }
 
     .q-field__control {
       min-height: 92px !important;
     }
+
+    .q-field__control-container {
+      height: auto;
+    }
   }
 
   .q-field__control {
     height: 36px;
     background-color: $white-color;
+  }
+
+  .q-field__append {
+    max-height: 36px;
   }
 }
 
