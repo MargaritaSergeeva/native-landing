@@ -42,6 +42,22 @@ input[type="radio"].visually-hidden {
   overflow: hidden;
 }
 
+.logo {
+  padding-top: 63px;
+  text-align: center;
+
+  img {
+    width: 138px;
+  }
+
+  @media(max-width: 767px) {
+    padding-top: 38px;
+    img {
+      width: 109px;
+    }
+  }
+}
+
 .container {
   max-width: 1440px;
   width: 100%;
@@ -89,6 +105,19 @@ input[type="radio"].visually-hidden {
   }
 }
 
+.guest-title {
+  margin: 0;
+  font-size: 40px;
+  line-height: 40px;
+  text-align: center;
+  letter-spacing: 0;
+
+  @media (max-width: 767px) {
+    font-size: 26px;
+    line-height: 26px;
+  }
+}
+
 .intro {
   margin: 0;
   font-size: 22px;
@@ -112,11 +141,13 @@ input[type="radio"].visually-hidden {
 }
 
 .input {
-  background-color: $white-color;
   border-radius: 0;
   outline: none;
-  padding-left: 20px;
-  padding-right: 20px;
+
+  input {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
 
   &--textarea {
     textarea {
@@ -130,6 +161,7 @@ input[type="radio"].visually-hidden {
 
   .q-field__control {
     height: 36px;
+    background-color: $white-color;
   }
 }
 
@@ -147,6 +179,193 @@ input[type="radio"].visually-hidden {
   }
 }
 
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none; // Yeah, yeah everybody write about it
+}
+
+input[type='number'],
+input[type="number"]:hover,
+input[type="number"]:focus {
+  appearance: none;
+  -moz-appearance: textfield;
+}
+
+.radio {
+  font-size: 18px;
+  line-height: 140%;
+
+  .q-radio__inner {
+    width: 20px;
+    height: 20px;
+    background-color: $white-color;
+    font-size: 20px;
+    margin-right: 16px;
+
+    &::before {
+      display: none;
+    }
+
+    svg {
+      display: none;
+    }
+
+    &--truthy {
+      position: relative;
+      &::after {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 8px;
+        height: 8px;
+        background-color: $main-color;
+        border-radius: 50%;
+      }
+    }
+  }
+
+  @media(max-width: 767px) {
+    font-size: 14px;
+    line-height: 140%;
+  }
+}
+
+.select {
+  background-color: $white-color;
+  font-size: 18px;
+  line-height: 140%;
+
+  .q-field__control {
+    height: 36px;
+    min-height: 36px;
+    padding-right: 7px;
+    padding-left: 15px;
+  }
+
+  .q-field__native {
+    min-height: 36px;
+  }
+
+  .q-field__append {
+    height: 36px;
+  }
+
+  &__menu {
+    border: none;
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 18px;
+    line-height: 140%;
+
+    .q-item {
+      min-height: 36px;
+    }
+
+    .select__option {
+      color: $text-color;
+      background-color: rgba(232, 240, 255, 0.5);
+    }
+  }
+
+  @media(max-width: 767px) {
+    font-size: 14px;
+    line-height: 140%;
+
+    .q-field__control {
+      padding-right: 5px;
+      padding-left: 10px;
+    }
+
+    &__menu {
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+}
+
+.checkbox {
+  align-items: flex-start;
+  font-size: 14px;
+  line-height: 140%;
+
+  .q-checkbox__inner {
+    width: 18px;
+    height: 18px;
+    margin-right: 4px;
+    min-width: 18px;
+
+    &::before {
+      display: none;
+    }
+  }
+
+  .q-checkbox__bg {
+    border: none;
+    background-color: $white-color;
+
+    svg {
+      fill: $text-color;
+    }
+  }
+
+  .q-checkbox__inner--truthy {
+    background-color: $white-color;
+    border-radius: 0;
+  }
+
+  .q-icon {
+    color: $text-color;
+  }
+
+  @media(max-width: 767px) {
+    font-size: 12px;
+    line-height: 140%;
+  }
+}
+
+.btn-toggle {
+  width: 100%;
+  background-color: transparent;
+
+  .q-btn {
+    border-bottom: 2px solid transparent;
+    font-size: 14px;
+    line-height: 140%;
+    padding-bottom: 10px;
+    transition: 0.3s all;
+  }
+
+  .q-btn.bg-none {
+    border-bottom: 2px solid $main-color;
+    text-shadow: 0 0 1px $text-bold-color;
+  }
+
+  .q-focus-helper {
+    display: none;
+  }
+
+  .q-ripple {
+    display: none;
+  }
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px #fff inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+@import "components/guest-layout";
+@import "components/main-layout";
 @import "components/main-header";
 @import "components/essential-link";
 @import "components/main-btn";
@@ -171,3 +390,7 @@ input[type="radio"].visually-hidden {
 @import "components/contacts-page/contacts-form";
 @import "components/contacts-page/map-block";
 @import "components/contacts-page/our-contacts-section";
+@import "components/auth/login-page";
+@import "components/auth/login-form";
+@import "components/auth/registration-page";
+@import "components/auth/registration-stepper";

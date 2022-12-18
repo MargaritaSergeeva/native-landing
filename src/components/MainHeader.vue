@@ -35,9 +35,9 @@
   <q-header class="main-header">
     <q-toolbar class="main-header__block container">
       <div class="main-header__logo">
-        <a href="/">
-          <img alt="logo" class="logo" src="~assets/logo.svg" clickable/>
-        </a>
+        <router-link to="/">
+          <img alt="logo" src="~assets/logo.svg" clickable/>
+        </router-link>
       </div>
       <div class="main-header__nav">
         <q-list class="main-header__main-list">
@@ -48,8 +48,8 @@
           />
         </q-list>
         <q-list class="main-header__user-list">
-          <q-btn class="main-btn main-btn--black q-mr-sm">Разместить рекламу</q-btn>
-          <q-btn class="main-btn main-btn--simple">Вход</q-btn>
+          <q-btn class="main-btn main-btn--black q-mr-sm" @click="router.push({name: 'registration'})">Разместить рекламу</q-btn>
+          <q-btn class="main-btn main-btn--simple" @click="router.push({name: 'enter'})">Вход</q-btn>
         </q-list>
       </div>
 
@@ -69,8 +69,10 @@
 
 <script setup lang="ts">
 import { ref } from 'vue';
+import {useRouter} from 'vue-router';
 import EssentialLink from 'components/EssentialLink.vue';
 
+const router = useRouter();
 const isMenuOpen = ref(false);
 
 const essentialLinks = [

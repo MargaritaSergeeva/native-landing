@@ -18,6 +18,19 @@
     display: none;
   }
 
+  &--transparent {
+    color: $main-color;
+    font-weight: 600;
+    border: 2px solid $main-color;
+    min-height: 50px;
+    min-width: 98px;
+    transition: 0.3s all;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
   &--simple {
     padding-right: 0;
     border: none;
@@ -28,6 +41,14 @@
 
     &:hover {
       text-shadow:  0 0 1px $text-bold-color;
+    }
+
+    .q-focus-helper {
+      display: none;
+    }
+
+    .q-ripple {
+      display: none;
     }
   }
 
