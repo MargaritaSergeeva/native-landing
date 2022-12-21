@@ -18,12 +18,12 @@
 
           <div class="registration-stepper__item">
             <q-select
-              :options="USER_ROLES"
+              :options="USER_TYPES"
               map-options
               emit-value
               option-value="id"
               option-label="name"
-              v-model="registrationData.role"
+              v-model="registrationData.userType"
               class="registration-stepper__select select"
               popup-content-class="select__menu"
               options-selected-class="select__option"
@@ -36,12 +36,12 @@
             class="registration-stepper__item registration-stepper__item--last"
           >
             <q-select
-              :options="ORGANIZATIONS"
+              :options="ORGANIZATION_TYPES"
               map-options
               emit-value
               option-value="id"
               option-label="name"
-              v-model="registrationData.organization"
+              v-model="registrationData.organizationType"
               class="registration-stepper__select select"
               popup-content-class="select__menu"
               options-selected-class="select__option"
@@ -51,7 +51,6 @@
               @update:model-value="registrationData.conditions='offer'"
             />
           </div>
-
         </q-step>
 
         <q-step
@@ -60,8 +59,8 @@
           class="registration-stepper__step"
         >
           <div class="registration-stepper__fix-height"
-               :class="{'registration-stepper__fix-height--hidden' : registrationData.organization === Organization.sole_entrepreneur}">
-            <div v-if="registrationData.organization === Organization.llc"
+               :class="{'registration-stepper__fix-height--hidden' : registrationData.organizationType === OrganizationTypes.SOLE_ENTREPRENEUR}">
+            <div v-if="registrationData.organizationType === OrganizationTypes.LLC"
                  class="registration-stepper__group registration-stepper__group--rules">
               <label class="label">Наименование организации</label>
               <q-input
@@ -75,12 +74,11 @@
                 class="input"
                 :rules="[rules.required, rules.minLen(3), rules.maxLen(60)]"
               />
-              <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
             </div>
           </div>
           <div class="registration-stepper__block-wrapper">
             <div class="registration-stepper__block">
-              <div v-if="registrationData.organization === Organization.sole_entrepreneur"
+              <div v-if="registrationData.organizationType === OrganizationTypes.SOLE_ENTREPRENEUR"
                    class="registration-stepper__group registration-stepper__group--rules">
                 <label class="label">Наименование</label>
                 <q-input
@@ -94,7 +92,6 @@
                   class="input"
                   :rules="[rules.required, rules.minLen(3), rules.maxLen(60)]"
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
               <div class="registration-stepper__group registration-stepper__group--rules">
                 <label class="label">ФИО</label>
@@ -109,7 +106,6 @@
                   class="input"
                   :rules="[rules.required, rules.minLen(3), rules.maxLen(60)]"
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
               <div class="registration-stepper__group registration-stepper__group--rules">
                 <label class="label">Электронная почта</label>
@@ -126,9 +122,8 @@
                   :rules="[rules.required, rules.email]"
                   @keydown.space.prevent
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
-              <div v-if="registrationData.organization === Organization.llc"
+              <div v-if="registrationData.organizationType === OrganizationTypes.LLC"
                    class="registration-stepper__group registration-stepper__group--rules">
                 <label class="label">ИНН</label>
                 <q-input
@@ -144,7 +139,6 @@
                   :rules="[rules.required, rules.inn]"
                   @keydown.space.prevent
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
             </div>
             <div class="registration-stepper__block">
@@ -152,17 +146,16 @@
                 <label class="label">Телефон</label>
                 <q-input
                   ref="phoneInputRef"
-                  v-model="registrationData.phone"
+                  v-model="registrationData.contact"
                   dense
                   square
                   borderless
                   bottom-slots
                   lazy-rules
-                  type="number"
                   :rules="[rules.required]"
                   class="input"
+                  mask="+7 (###) ### - ####"
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
               <div class="registration-stepper__group registration-stepper__group--rules">
                 <label class="label">Пароль</label>
@@ -179,13 +172,12 @@
                   :rules="[rules.required, rules.minLen(8)]"
                   @keydown.space.prevent
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
               <div class="registration-stepper__group registration-stepper__group--rules">
                 <label class="label">Повторить пароль</label>
                 <q-input
-                  ref="repeatedPasswordInputRef"
-                  v-model="registrationData.repeated_password"
+                  ref="confirmedPasswordInputRef"
+                  v-model="registrationData.password_confirmation"
                   dense
                   square
                   borderless
@@ -196,7 +188,6 @@
                   :rules="[rules.required, rules.password, rules.minLen(8)]"
                   @keydown.space.prevent
                 />
-                <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
               </div>
             </div>
           </div>
@@ -206,7 +197,7 @@
         <q-step
           :name="3"
           :done="step > 3"
-          :disable="registrationData.role === Role.advertiser"
+          :disable="registrationData.userType === UserRoles.AGENCY_CLIENT"
           class="registration-stepper__step registration-stepper__step--short registration-stepper__step--big-padding"
         >
           <div class="registration-stepper__group">
@@ -228,7 +219,7 @@
         <q-step
           :name="4"
           :done="step > 4"
-          :disable="registrationData.role === Role.advertiser || registrationData.conditions === Conditions.offer"
+          :disable="registrationData.userType === UserRoles.AGENCY_CLIENT || registrationData.conditions === Conditions.OFFER"
           class="registration-stepper__step registration-stepper__step--short registration-stepper__step--big-padding"
         >
           <div class="registration-stepper__group">
@@ -244,45 +235,55 @@
               :rules="[rules.required, rules.email]"
               @keydown.space.prevent
             />
-            <small v-if="formErrors.email" class="text-red">{{ formErrors.email }}</small>
           </div>
         </q-step>
 
         <q-step
           :name="5"
           :done="step > 5"
-          :disable="registrationData.conditions === Conditions.contract"
+          :disable="registrationData.conditions === Conditions.CONTRACT"
           class="registration-stepper__step registration-stepper__step--padding"
         >
-          <p class="registration-stepper__text">
-            <a href="#">Оферта</a> для рекламных агентств / для рекламодателей
+          <p
+            v-if="registrationData.userType === UserRoles.AGENCY"
+            class="registration-stepper__text"
+          >
+            <a href="https://docs.google.com/document/d/19UySEsCoO5IHLrYbWPCJaBnezKXBmDSc6PUusSRazZo/edit"
+              target="_blank">Оферта</a> для рекламных агентств
+          </p>
+          <p
+            v-if="registrationData.userType === UserRoles.AGENCY"
+            class="registration-stepper__text"
+          >
+            <a href="https://docs.google.com/document/d/1A9rhilL3w2Yw6hhg-88RYgulk7fyWeK79t-FGaEkbZs/edit"
+               target="_blank">Договор</a> об оказании услуг информационного взаимодействия с ОРД
           </p>
           <p class="registration-stepper__text">
-            <a href="#">Договор</a> об оказании услуг информационного взаимодействия с ОРД
-          </p>
-          <p class="registration-stepper__text">
-            <a href="#">Правила</a> оказания услуг для рекламодателей / рекламных агентств
+            <a href="https://docs.google.com/document/d/1q6J4pqJj6V6t0qBzcNGthO4xoYPkseox7SKdFNcGIFc/edit"
+              target="_blank">Правила</a> оказания услуг для рекламных агентств
           </p>
           <div class="registration-stepper__item registration-stepper__item--checkbox">
             <q-checkbox
-              v-model="registrationData.isContractAgreed"
+              v-model="registrationData.is_contract_agreed"
               class="checkbox"
               dense
               checked-icon="done"
             >
               <template #default>
                 Проставление вами галочки подтверждает, что вы прочитали и полностью безоговорочно принимаете условия
-                следующих документов: 1) оферту для прямых рекламодателей/рекламных агентств, 2) правила оказания услуг
-                для рекламодателей/рекламных агентств 3) договор об оказании услуг информационного взаимодействия с ОРД
+                следующих документов:
+                <span v-if="registrationData.userType === UserRoles.AGENCY">1) оферту для рекламных агентств,</span><span v-if="registrationData.userType === UserRoles.AGENCY">2)</span> правила оказания услуг
+                для рекламных агентств <span v-if="registrationData.userType === UserRoles.AGENCY">3) договор об оказании услуг информационного взаимодействия с ОРД</span>
               </template>
             </q-checkbox>
           </div>
           <p class="registration-stepper__text">
-            <a href="#">Политика конфиденциальности</a>
+            <a href="https://docs.google.com/document/d/1GLuPKtIPD_DJX0Qt2FyHc3p659D7JVnnioKWExqz_58/edit"
+               target="_blank">Политика конфиденциальности</a>
           </p>
           <div class="registration-stepper__item registration-stepper__item--checkbox">
             <q-checkbox
-              v-model="registrationData.isPrivacyPolicyAgreed"
+              v-model="registrationData.is_privacy_policy_agreed"
               class="checkbox"
               dense
               checked-icon="done"
@@ -305,10 +306,10 @@
 
           <div class="registration-stepper__btn-wrapper">
             <q-btn class="registration-stepper__main-btn main-btn main-btn--transparent"
-                   @click="registrationData.isAdvertisingSystem=false; register()">Нет
+                   @click="registrationData.is_advertising_system=false; onSubmit()">Нет
             </q-btn>
             <q-btn class="registration-stepper__main-btn main-btn main-btn--transparent"
-                   @click="registrationData.isAdvertisingSystem=true; register()">Да
+                   @click="registrationData.is_advertising_system=true; onSubmit()">Да
             </q-btn>
           </div>
         </q-step>
@@ -330,53 +331,41 @@
 
 
 <script lang="ts" setup>
-import {ref, computed} from 'vue';
-
-enum Organization {
-  llc = 1,
-  sole_entrepreneur = 2,
-}
-
-enum Role {
-  advertiser = 1,
-  advertising_agency = 2,
-}
-
-enum Conditions {
-  offer = 'offer',
-  contract = 'contract',
-}
+import {ref, computed, reactive} from 'vue';
+import {useAuth} from '@websanova/vue-auth';
+import axios from 'axios';
+import {Validate} from 'src/common/validateErrors';
+import {UserRoles, OrganizationTypes, Conditions} from 'src/types/user.type';
 
 interface RegistrationDataInterface {
-  role: number,
-  organization: number,
+  userType: number,
+  organizationType: number,
   llc_name: string | null,
   sole_entrepreneur_name: string | null,
   user_name: string,
-  phone: string,
+  contact: string,
+  contact_type: string,
   email: string,
   password: string,
-  repeated_password: string,
+  password_confirmation: string,
   inn: string | null,
-  isContractAgreed: boolean,
-  isPrivacyPolicyAgreed: boolean,
+  is_contract_agreed: boolean,
+  is_privacy_policy_agreed: boolean,
   email_for_contract: string | null,
-  isAdvertisingSystem: boolean,
+  is_advertising_system: boolean,
   conditions: string,
+  currency: string,
 }
 
-const USER_ROLES = [
-  {
-    id: 1,
-    name: 'Рекламодатель',
-  },
-  {
-    id: 2,
-    name: 'Рекламное агенство',
-  },
-];
+interface FormErrorsInterface {
+  email: string;
+  password: string,
+  contact: string,
+  inn: string,
+  email_for_contract: string,
+}
 
-const ORGANIZATIONS = [
+const ORGANIZATION_TYPES = [
   {
     id: 1,
     name: 'ООО',
@@ -387,8 +376,22 @@ const ORGANIZATIONS = [
   },
 ];
 
+const USER_TYPES = [
+  {
+    id: 1,
+    name: 'Клиент рекламного агентства'
+  },
+  {
+    id: 2,
+    name: 'Рекламное агенство'
+  },
+];
+
+const auth = useAuth();
 const step = ref<number>(1);
 const stepper = ref();
+const processing = ref(false);
+
 const organizationNameInputRef = ref();
 const organizationInputRef = ref()
 const nameInputRef = ref()
@@ -396,37 +399,62 @@ const innInputRef = ref()
 const emailInputRef = ref()
 const phoneInputRef = ref()
 const passwordInputRef = ref();
-const repeatedPasswordInputRef = ref();
+const confirmedPasswordInputRef = ref();
 const emailContractInputRef = ref();
 
-const registrationData = ref<RegistrationDataInterface>({
-  role: 1,
-  organization: 1,
+const registrationData = reactive<RegistrationDataInterface>({
+  userType: 1,
+  organizationType: 1,
   llc_name: null,
   sole_entrepreneur_name: null,
   user_name: '',
-  phone: '',
+  contact: '',
+  contact_type: 'telephone',
   email: '',
   password: '',
-  repeated_password: '',
+  password_confirmation: '',
   inn: null,
-  isContractAgreed: true,
-  isPrivacyPolicyAgreed: true,
+  is_contract_agreed: true,
+  is_privacy_policy_agreed: true,
   conditions: 'offer',
   email_for_contract: null,
-  isAdvertisingSystem: false,
+  is_advertising_system: false,
+  currency: '1',
 });
 
-const formErrors = ref({
+const formErrors = ref<FormErrorsInterface>({
   email: '',
   password: '',
+  contact: '',
+  inn: '',
+  email_for_contract: '',
 })
 
-const register = () => {
-  console.log(registrationData.value)
-};
+async function onSubmit() {
+  processing.value = true;
+
+  await auth.register({
+    data: {...registrationData},
+    autoLogin: true,
+    staySignedIn: true,
+    fetchUser: true
+  }).then(() => {
+    console.log(registrationData)
+    auth.ready();
+  }).catch((err) => {
+    processing.value = false;
+    if (axios.isAxiosError(err)) {
+      if (err.response?.status === 422) {
+        new Validate(err.response?.data, formErrors.value)
+      }
+    }
+  }).finally(() => {
+    processing.value = false;
+  })
+}
 
 const checkValidate = computed(() => (...inputs: any[]) => {
+  console.log(inputs)
   return inputs.reduce((isValid = true, input) => {
     const isValidInput = input.validate();
     if (!isValidInput) isValid = isValidInput;
@@ -437,11 +465,11 @@ const checkValidate = computed(() => (...inputs: any[]) => {
 const toNext = () => {
   switch (step.value) {
     case 2:
-      if (+registrationData.value.organization === Organization.llc &&
-        checkValidate.value(organizationNameInputRef.value, nameInputRef.value, innInputRef.value, emailInputRef.value, phoneInputRef.value, passwordInputRef.value, repeatedPasswordInputRef.value)) {
+      if (registrationData.organizationType === OrganizationTypes.LLC &&
+        checkValidate.value(organizationNameInputRef.value, nameInputRef.value, innInputRef.value, emailInputRef.value, phoneInputRef.value, passwordInputRef.value, confirmedPasswordInputRef.value)) {
         stepper.value.next();
-      } else if (+registrationData.value.organization === Organization.sole_entrepreneur &&
-        checkValidate.value(organizationInputRef.value, nameInputRef.value, emailInputRef.value, phoneInputRef.value, passwordInputRef.value, repeatedPasswordInputRef.value)) {
+      } else if (registrationData.organizationType === OrganizationTypes.SOLE_ENTREPRENEUR &&
+        checkValidate.value(organizationInputRef.value, nameInputRef.value, emailInputRef.value, phoneInputRef.value, passwordInputRef.value, confirmedPasswordInputRef.value)) {
         stepper.value.next();
       }
       break;
@@ -451,7 +479,7 @@ const toNext = () => {
       }
       break;
     case 5:
-      if (registrationData.value.isContractAgreed && registrationData.value.isPrivacyPolicyAgreed) {
+      if (registrationData.is_contract_agreed && registrationData.is_privacy_policy_agreed) {
         stepper.value.next()
       }
       break;
@@ -477,7 +505,7 @@ const rules = {
     return emailPattern.test(v) || 'Неверный формат email';
   },
   password: (v: string) => {
-    return v === registrationData.value.password || 'Пароли не совпадают';
+    return v === registrationData.password || 'Пароли не совпадают';
   }
 };
 </script>

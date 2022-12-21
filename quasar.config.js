@@ -13,6 +13,7 @@
 
 
 const { configure } = require('quasar/wrappers');
+require('dotenv').config()
 
 module.exports = configure(function (ctx) {
   return {
@@ -32,10 +33,7 @@ module.exports = configure(function (ctx) {
     // app boot file (/src/boot)
     // --> boot files are part of "main.js"
     // https://v2.quasar.dev/quasar-cli-webpack/boot-files
-    boot: [
-
-
-    ],
+    boot: ['axios','auth'],
 
     // https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-css
     css: [
@@ -58,7 +56,8 @@ module.exports = configure(function (ctx) {
 
     // Full list of options: https://v2.quasar.dev/quasar-cli-webpack/quasar-config-js#Property%3A-build
     build: {
-      vueRouterMode: 'hash', // available values: 'hash', 'history'
+      env: require('dotenv').config().parsed,
+      vueRouterMode: 'history', // available values: 'hash', 'history'
 
       // transpile: false,
       // publicPath: '/',
@@ -106,7 +105,17 @@ module.exports = configure(function (ctx) {
       // directives: [],
 
       // Quasar plugins
-      plugins: []
+      plugins: [
+        'Dialog',
+        'Meta',
+        'Notify',
+        'Cookies',
+        'Loading',
+        // 'LoadingBar',
+        'LocalStorage',
+        'SessionStorage',
+        'AddressbarColor',
+      ],
     },
 
     // animations: 'all', // --- includes all animations

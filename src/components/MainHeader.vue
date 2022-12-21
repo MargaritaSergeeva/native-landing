@@ -17,7 +17,7 @@
           clickable
           class="essential-link"
         >
-          <q-item-section>
+          <q-item-section @click="router.push({name: 'registration'})">
             <q-item-label>Разместить рекламу</q-item-label>
           </q-item-section>
         </q-item>
@@ -25,7 +25,7 @@
           clickable
           class="essential-link"
         >
-          <q-item-section>
+          <q-item-section @click="router.push({name: 'login'})">
             <q-item-label>Вход</q-item-label>
           </q-item-section>
         </q-item>
@@ -49,7 +49,7 @@
         </q-list>
         <q-list class="main-header__user-list">
           <q-btn class="main-btn main-btn--black q-mr-sm" @click="router.push({name: 'registration'})">Разместить рекламу</q-btn>
-          <q-btn class="main-btn main-btn--simple" @click="router.push({name: 'enter'})">Вход</q-btn>
+          <q-btn class="main-btn main-btn--simple" @click="router.push({name: 'login'})">Вход</q-btn>
         </q-list>
       </div>
 
